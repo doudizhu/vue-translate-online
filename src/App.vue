@@ -1,17 +1,22 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+<template lang="pug">
+  #app
+    h1 在线翻译
+    translateForm(v-on:formSubmit="translateText")
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import TranslateForm from './components/TranslateForm'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TranslateForm,
+  },
+  methods:{
+    translateText:function(text){
+      alert(text);
+    }
   }
 }
 </script>
